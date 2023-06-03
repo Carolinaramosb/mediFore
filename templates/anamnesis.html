@@ -1,0 +1,44 @@
+
+        <form action="anamnesis.php?paciente={{paciente.dni}}" method="post">
+            <div class="anamnesis"> 
+                <h1>Anamnesis y exploración:</h1>
+
+                <p><label class="anamnesis" for="antecedentes"><b>Antecedentes del paciente</b></label></p>
+                <input class = "input_form" type="text" value="{{paciente.antecedentes}}" name="antecedentes" required>
+
+                <p><label class="anamnesis" for="enfermedad"><b>Enfermedad actual</b></label></p>
+                <input class = "input_form" type="text" value="{{paciente.enfermedad}}" name="enfermedad" required>
+
+                <p><label class="anamnesis" for="inspeccion">Inspeccion general</label></p>
+                <input class = "input_form" type="text" name="inspeccion" required>
+
+                <p><label class="anamnesis" for="cabezaCuello"><b>Cabeza y cuello</b></label></p>
+                <input class = "input_form" type="text" name="cabezaCuello" required>
+
+                <p><label class="anamnesis" for="neurologica"><b>Exploración neurológica</b></label></p>
+                <input class = "input_form" type="text" name="neurologica" required>
+
+                <p><label class="anamnesis" for="aCardiaca"><b>Auscultación cardíaca</b></label></p>
+                <input class = "input_form" type="text" name="aCardiaca" required>
+
+                <p><label class="anamnesis" for="aRespiratoria"><b>Auscultación respiratoria</b></label></p>
+                <input class = "input_form" type="text" name="aRespiratoria" required>
+
+                <p><label class="anamnesis" for="abdomen"><b>Exploración del abdomen</b></label></p>
+                <input class = "input_form" type="text" name="abdomen" required>
+
+                <p><label class="anamnesis" for="extremidades"><b>Exploración de extremidades</b></label></p>
+                <input class = "input_form" type="text"  name="extremidades" required>
+
+                <p><label class="anamnesis" for="tension">Tension artesarial</label></p>
+                <input class = "input_form" type="number" name="tension" required>
+
+                <p><label class="anamnesis" for="frecuencia">Frecuencia cardiaca</label></p>
+                <input class = "input_form" type="number" name="frecuencia" required>
+                            
+                <p>
+                    <button type="submit" class="boton signupbtn">Guardar datos</button>
+                </p>
+                
+            </div>
+      </form>

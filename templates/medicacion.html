@@ -1,0 +1,25 @@
+<form action="medicacion.php?paciente={{paciente.dni}}" method="post">
+    <div class="medicacion"> 
+        <h1>Información complementaria del paciente:</h1>
+
+        <p><label class="medicacion" for="complementaria"><b>Datos complementarios</b></label></p>
+        <input class = "input_form" type="text" value="{{paciente.complementaria}}" name="complementaria" required>
+
+        <p><label class="medicacion" for="diagnostico"><b>Diagnostico actual</b></label></p>
+        <input class = "input_form" type="text" value="{{paciente.diagnostico}}" name="diagnostico" required>
+
+        <p><label class="medicacion" for="dieta">Dieta recomendada</label></p>
+        <input class = "input_form" type="text" value="{{paciente.dieta}}" name="dieta" required>
+
+        <p><label class="medicacion" for="medicina"><b>Medicación </b></label></p>
+        <input class = "input_form" type="text" value="{{paciente.medicina}}" name="medicina" required>
+
+        <p><label class="medicacion" for="dosis"><b>Dosis</b></label></p>
+        <input class = "input_form" type="text" value="{{paciente.dosis}}" name="dosis" required>
+   
+        <p>
+            <button type="submit" class="boton signupbtn">Guardar datos</button>
+        </p>
+        
+    </div>
+</form>

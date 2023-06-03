@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+        <form action="personalMedico.php?nombre={{username}}" method="post">
+            <div class="datosPersonales"> 
+                <h1>Datos personales del médico</h1>
+                Información relacionada con los datos personales del médico.
+                <h2> Nombre: {{personalMedico.nombre}}</h2>
+                <h3> Apellidos: {{personalMedico.apellidos}}</h3>
+                <h4> Telefono: {{personalMedico.telefono}}</h4>
+                <h5> Número de colegiado: {{personalMedico.numCol}}</h5>
+                <h6> Dirección: {{personalMedico.direccion}}</h6>
+                <h7> Especialidad: {{personalMedico.especialidad}}</h7>
+            </div>
+            <div class = "botonEditarPaciente">
+                <a href = "editarMedico.php">Editar datos</a>
+            </div>
+      </form>
+</html>
+ 

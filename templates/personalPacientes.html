@@ -1,0 +1,24 @@
+
+<form action="personalPaciente.php?nombre={{pacienteSelec}}" method="post">
+    <div class="datosPersonales"> 
+        <h1>Datos personales del paciente</h1>
+        Información relacionada con los datos personales del médico.
+        <h6> Nombre: {{personalPaciente.nombre}}</h6>
+        <h6> Apellidos: {{personalPaciente.apellidos}}</h6>
+        <h6> Compañía de seguros: {{personalPaciente.compañia}}</h6>
+        <h6> Fecha de nacimiento: {{personalPaciente.fechaNaci}}</h6>
+        <h6> Nº Historia: {{personalPaciente.numHistoria}}</h6>
+        <h6> DNI: {{personalPaciente.dni}}</h6>
+        <h6> Dirección: {{personalPaciente.direccion}}</h6>
+        <h8> Teléfono: {{personalPaciente.telefono}}</h8>
+    </div>
+
+    <div class = "botonEditarPaciente">
+        <a href = "editarPaciente.php">Editar paciente</a>
+    </div>
+
+    <div class = "botonEliminarPaciente">
+        <a href = "eliminarPaciente.php">Eliminar paciente</a>
+    </div>
+
+</form>

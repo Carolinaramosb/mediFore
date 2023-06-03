@@ -1,0 +1,31 @@
+<form action="editarMedico.php?medico={{medico.username}}" method="post">
+    <div class="editarMedico">
+        <h1>Datos del médico a editar : {{medico.nombre}} {{medico.apellidos}}</h1> 
+        <div class="contenedor-datos">
+            <h6><u>Teléfono:</u></h6>
+            <label for="telefono" class = "label_signup"></label>
+            <input class = "input_form" type="text"  value="{{medico.telefono}}"  name="telefono" required>
+        </div> 
+        <div class="contenedor-datos">
+            <h6><u>Direccion:</u></h6>
+            <label for="direccion" class = "label_signup"></label>
+            <input class = "input_form" type="text"  value="{{medico.direccion}}"  name="direccion" required>
+        </div>
+        <div class="contenedor-datos">
+            <h6><u>Especialidad:</u></h6>
+            <label for="especialidad" class = "label_signup"></label>
+            <input class = "input_form" type="text"  value="{{medico.especialidad}}"  name="especialidad" required>
+        </div>
+        <p>
+            {% for e in errores %}
+                <p>{{e}}</p>
+            {% endfor %}
+        </p>
+
+               
+        <button type="submit" class="boton loginbtn"><b>Editar datos</b></button>
+        </div>
+        <div>
+            <button type="submit" href = "inicio.php"><b>Volver atrás</b></button>
+        </div>
+</form>

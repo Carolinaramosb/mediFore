@@ -1,0 +1,17 @@
+
+        <form action="revision.php?paciente={{paciente.dni}}" method="post">
+            <div class="evolucion"> 
+                <h1>Revisión final del paciente:</h1>
+                {{paciente.dni}} 
+                <div class="contenedor-datos">
+                    <h6><u>Evolución del paciente:</u></h6>
+                    <label for="evolucion" class = "label_signup"></label>
+                    <input class = "input_form" type="text"  value="{{paciente.evolucion}}"  name="evolucion" required>
+                </div>
+
+                <p>
+                    <button type="submit" class="boton signupbtn">Guardar evolución</button>
+                </p>
+                
+            </div>
+      </form>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+        <form action="nuevoPaciente.php" method="post">
+            <div class="nuevoPaciente"> 
+                <h1>Datos personales del nuevo paciente:</h1>
+                Información del nuevo paciente a añadir
+
+                <label for="id" class = "dni">DNI del paciente</label>
+                <p><input class = "input_form" type="text" placeholder="DNI..." name="dni" required></p>
+
+                <p><label class="label_signup" for="nombre"><b>Nombre del paciente</b></label></p>
+                <input class = "input_form" type="text" placeholder="Nombre..." name="nombre" required>
+
+                <p><label class="label_signup" for="apellidos"><b>Apellidos del paciente</b></label></p>
+                <input class = "input_form" type="text" placeholder="Apellidos..." name="apellidos" required>
+
+                <p><label class="label_signup" for="compañia"><b>Compañía de Seguros</b></label></p>
+                <input class = "input_form" type="text"  placeholder="Compañía..." name="compañia" required>
+
+                <p><label class="label_signup" for="fecha">Fecha de nacimiento:</label></p>
+                <input class = "input_form" type="date"  placeholder="Fecha..." name="fecha" required>
+
+                <p><label class="label_signup" for="direccion"><b>Direccion del paciente</b></label></p>
+                <input class = "input_form" type="text" placeholder="Direccion..." name="direccion" required>
+
+                <p><label class="label_signup" for="telefono"><b>Teléfono del paciente</b></label></p>
+                <input class = "input_form" type="text" placeholder="Teléfono..." name="telefono" required>
+
+                <p>
+                {% for e in errores %}
+                    <p>
+                        {{e}}
+                    </p>
+                {% endfor %}
+                </p>
+            
+                <p>
+                    <button type="submit" class="boton signupbtn">Añadir Paciente</button>
+                </p>
+                
+            </div>
+      </form>
+</html>
