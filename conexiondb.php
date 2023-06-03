@@ -235,17 +235,17 @@
                 $stmt->bind_param('s', $dni);
                 $stmt->execute(); 
 
-                $stmt = $this->mysql->prepare('DELETE FROM medicacion WHERE dni = ?');
-                $stmt->bind_param('s', $dni);
-                $stmt->execute(); 
+                // $stmt = $this->mysql->prepare('DELETE FROM medicacion WHERE dni = ?');
+                // $stmt->bind_param('s', $dni);
+                // $stmt->execute(); 
 
-                $stmt = $this->mysql->prepare('DELETE FROM anamnesis WHERE dni = ?');
-                $stmt->bind_param('s', $dni);
-                $stmt->execute(); 
+                // $stmt = $this->mysql->prepare('DELETE FROM anamnesis WHERE dni = ?');
+                // $stmt->bind_param('s', $dni);
+                // $stmt->execute(); 
 
-                $stmt = $this->mysql->prepare('DELETE FROM personalPaciente WHERE dni = ?');
-                $stmt->bind_param('s', $dni);
-                $stmt->execute();             
+                // $stmt = $this->mysql->prepare('DELETE FROM personalPaciente WHERE dni = ?');
+                // $stmt->bind_param('s', $dni);
+                // $stmt->execute();             
             }
 
         }
