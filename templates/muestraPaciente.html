@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
+{% extends "padre2.html" %}
+    {% block central %}
         <form action="muestraPaciente.php" method="get">
             <div class="muestraPaciente"> 
-                <h1>Nombre de los pacientes: </h1>
+                <!--<h1>Nombre de los pacientes: </h1>-->
                 {% for paciente in pacientes%}
-                    <a name = "dni" href= "personalPaciente.php?dni={{paciente.dni}}" value ="{{paciente.dni}}">
-                        {{paciente.nombre}}<br>
+                    <a class="nombres" name = "dni" href= "personalPaciente.php?dni={{paciente.dni}}" value ="{{paciente.dni}}">
+                        {{paciente.nombre}} {{paciente.apellidos}}<br><br>
                     </a>
                 {% endfor %}
             </div>
       </form>
-</html>
+      {% endblock %}

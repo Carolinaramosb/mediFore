@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html>
+{% extends "padre.html" %}
+    {% block central %}
         <form action="personalMedico.php?nombre={{username}}" method="post">
-            <div class="datosPersonales"> 
+            <div class="centro"> 
                 <h1>Datos personales del médico</h1>
-                Información relacionada con los datos personales del médico.
-                <h2> Nombre: {{personalMedico.nombre}}</h2>
-                <h3> Apellidos: {{personalMedico.apellidos}}</h3>
-                <h4> Telefono: {{personalMedico.telefono}}</h4>
-                <h5> Número de colegiado: {{personalMedico.numCol}}</h5>
-                <h6> Dirección: {{personalMedico.direccion}}</h6>
-                <h7> Especialidad: {{personalMedico.especialidad}}</h7>
+                <label for="id" class="tituloCaja1"><span class="titulo-negrita">Nombre:</span> {{personalMedico.nombre}}</label>
+                <label for="id" class="tituloCaja2"><span class="titulo-negrita">Apellidos:</span> {{personalMedico.apellidos}}</label>
+                <label for="id" class="tituloCaja3"><span class="titulo-negrita">Teléfono:</span> {{personalMedico.telefono}}</label>
+                <label for="id" class="tituloCaja5"><span class="titulo-negrita">Nº Colegiado:</span> {{personalMedico.numCol}}</label>
+                <label for="id" class="tituloCaja6"><span class="titulo-negrita">Dirección:</span> {{personalMedico.direccion}}</label>
+                <label for="id" class="tituloCaja7"><span class="titulo-negrita">Especialidad:</span> {{personalMedico.especialidad}}</label>
             </div>
-            <div class = "botonEditarPaciente">
-                <a href = "editarMedico.php">Editar datos</a>
+            <div class = "botonesPP">
+                <div class="botonLado1">
+                    <a  href= "editarMedico.php">Editar datos</a>
+                </div>
             </div>
       </form>
-</html>
+    {% endblock %}
  

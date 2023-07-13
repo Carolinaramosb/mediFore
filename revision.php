@@ -16,7 +16,7 @@
         $paciente['dni'] = $paciente_activo;
         $paciente['evolucion'] = $_POST["evolucion"];
         $sql->editRevision($paciente);
-        header("Location: inicio.php");
+        header("Location: medicoPaciente.php");
   }
   else{
     echo $twig->render('revision.html', ['paciente' => $datos_paciente]);

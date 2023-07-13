@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" href="style/estilo.css" type="text/css">
+    <div a class="form2">
+        <img src="img/logo.png" style="width: 300px; display: block; margin: 0 auto;" id="imagenLogo">
 
-    <a href='muestraPaciente.php'>
-        <button class="botonListaPaciente">
-            Lista de pacientes
-        </button>
-    </a>
-    
-    <a href='nuevoPaciente.php'>
-        <button class="botonNuevoPaciente">
-            Nuevo paciente
-        </button>
-    </a>
-
-    <form action="loginPaciente.php" method="post">
-        <div class="loginPaciente">
-            <h1>Inicio de sesión de usuario</h1>
-
-                <label for="dni" class="label_LoginPaciente"></label>
-                <h2>DNI del paciente: </h2>
-                <input class="input_form" type="text" placeholder="DNI..." 
-                name="dni">
-
+        <div class ="botonLoginP">
+            <a href='muestraPaciente.php'>Lista de pacientes</a>
         </div>
-    </form>
+
+        <div class ="botonLoginP1">
+            <a href='nuevoPaciente.php'>Nuevo paciente</a>
+        </div>
+    
+        <div class = "boton-logout">
+            <a href = "logout.php">Cerrar sesión</a>
+        </div>
+
+        <form action="loginPaciente.php" method="post">
+            <div class="loginPaciente">
+                <h2>Selección de paciente</h2>
+                <label for="dni" class="label_LoginPaciente"></label>
+                <h3>DNI del paciente: </h3>
+                <input class="busqueda" type="text" placeholder="DNI..." name="dni">
+
+            </div>
+        </form>
+    </div>
 </html>

@@ -1,12 +1,15 @@
-
+{% extends "padre.html" %}
+    {% block central %}
         <form action="revision.php?paciente={{paciente.dni}}" method="post">
-            <div class="evolucion"> 
+            <div class="centro"> 
+
+                <img src="img/volver.png" style="width: 40px; display: block; margin-top: 0%; margin-left: 0%;" id="volver"
+                onclick="window.location.href='medicoPaciente.php'">
+
                 <h1>Revisión final del paciente:</h1>
                 {{paciente.dni}} 
                 <div class="contenedor-datos">
-                    <h6><u>Evolución del paciente:</u></h6>
-                    <label for="evolucion" class = "label_signup"></label>
-                    <input class = "input_form" type="text"  value="{{paciente.evolucion}}"  name="evolucion" required>
+                    <textarea class = "cuadroEvolucion"  wrap="hard"  name="evolucion" >{{paciente.evolucion}}</textarea>
                 </div>
 
                 <p>
@@ -15,3 +18,4 @@
                 
             </div>
       </form>
+      {% endblock %}

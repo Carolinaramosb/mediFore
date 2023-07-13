@@ -11,7 +11,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dni = $_POST['dni'];
         $_SESSION['dni'] = $dni;
-        header("Location: inicio.php");
+        header("Location: personalPaciente.php");
     }
 
     else{

@@ -1,20 +1,25 @@
+{% extends "padre.html" %}
+    {% block central %}
 <form action="editarMedico.php?medico={{medico.username}}" method="post">
     <div class="editarMedico">
-        <h1>Datos del médico a editar : {{medico.nombre}} {{medico.apellidos}}</h1> 
+
+        <img src="img/volver.png" style="width: 40px; display: block; margin-top: 0%; margin-left: 0%;" id="volver"
+        onclick="window.location.href='personalPaciente.php'">
+
+
+        <h1>Nombre del médico : {{medico.nombre}} {{medico.apellidos}}</h1> 
+        
         <div class="contenedor-datos">
-            <h6><u>Teléfono:</u></h6>
-            <label for="telefono" class = "label_signup"></label>
-            <input class = "input_form" type="text"  value="{{medico.telefono}}"  name="telefono" required>
+            <label for="telefono" class = "tituloCaja2">Teléfono:</label>
+            <input class = "caja2" type="text"  value="{{medico.telefono}}"  name="telefono" required>
         </div> 
         <div class="contenedor-datos">
-            <h6><u>Direccion:</u></h6>
-            <label for="direccion" class = "label_signup"></label>
-            <input class = "input_form" type="text"  value="{{medico.direccion}}"  name="direccion" required>
+            <label for="direccion" class = "tituloCaja3">Dirección:</label>
+            <input class = "caja3" type="text"  value="{{medico.direccion}}"  name="direccion" required>
         </div>
         <div class="contenedor-datos">
-            <h6><u>Especialidad:</u></h6>
-            <label for="especialidad" class = "label_signup"></label>
-            <input class = "input_form" type="text"  value="{{medico.especialidad}}"  name="especialidad" required>
+            <label for="especialidad" class = "tituloCaja6">Especialidad:</label>
+            <input class = "caja6" type="text"  value="{{medico.especialidad}}"  name="especialidad" required>
         </div>
         <p>
             {% for e in errores %}
@@ -22,10 +27,10 @@
             {% endfor %}
         </p>
 
-               
-        <button type="submit" class="boton loginbtn"><b>Editar datos</b></button>
-        </div>
-        <div>
-            <button type="submit" href = "inicio.php"><b>Volver atrás</b></button>
-        </div>
+        <div class="botonesPP">  
+            <div class="botonLado1">  
+                <button type="submit" class="boton loginbtn"><b>Editar datos</b></button>
+            </div>
+        </div> 
 </form>
+{% endblock %}

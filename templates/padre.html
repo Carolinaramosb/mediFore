@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+
+  <link rel="stylesheet" href="style/estilo.css" type="text/css">
+
+  <div a class="form3">
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Consulta de medicina interna">
+    </head>
+    
+    <body>
+      <header>
+        <img src="img/logo.png" style="width: 200px; display: block; margin: 0 auto;" id="imagenLogo">
+      
+        <div class = "boton-logout">
+          <a href = "logout.php">Cerrar sesión</a>
+        </div>
+
+        <div class = "botonLogoutP">
+          <a href = "loginPaciente.php">Cambiar paciente</a>
+        </div>
+
+        {% if cargo == "1" %}
+        <div class = "botonDatosM">
+          <a href = "personalMedico.php">Datos personales médico</a>
+        </div>
+        {% endif %}
+
+        <div class = "botonInicio">
+          <a href = "inicio.php">Inicio</a>
+        </div>
+
+      </header>
+      
+
+      <main>
+        <div class="form4">
+          {% block central %}
+          {% endblock %}
+        </div>
+        </main>
+
+      <footer>
+        <h4> Carolina Ramos Bentabol</h4>
+      </footer>
+
+    </body>
+  </div>
+</html>

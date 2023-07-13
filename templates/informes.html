@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="style/estilo.css" type="text/css">
+
+<div class="noImprimir">
+<form action="informes.php?paciente={{paciente}}" method="get">
+    <div class="informe">
+        <a onclick="imprimirInforme()" >Imprimir informe</a>
+    </div>
+
+    <div class="volverInforme">
+        <a href="inicio.php" >Inicio</a>
+    </div>
+
+</form>
+</div>
+
+
+<div class ="hoja-a4">
+    <div class="informe-imprimible">
+    <div class="infMedico" id="current_date"></div>
+    <div class="infMedico2">
+        Médico: {{medico.nombre}} <br>
+        Nº Colegiado: {{medico.numCol}}<br>
+        Teléfono: {{medico.telefono}}
+    </div>
+    </div>
+    <div class="infPersonal">
+        <strong><u>INFORME MÉDICO</u></strong><br>
+        <strong>{{paciente.nombre}} {{paciente.apellidos}}</strong><br> 
+        <strong>Fecha de nacimiento: </strong>{{paciente.fechaNaci}}  |  
+        <strong>Compañía de seguro: </strong>{{paciente.compañia}}  |  
+        <strong>Número Historia: </strong>{{paciente.numHistoria}}<br>
+    </div>
+    <div class="infMedicos">
+        <strong><u>ANAMNESIS</u></strong><br>
+        {% if anamnesis.antecedentes != null %}
+        <strong>Antecedentes: </strong>{{anamnesis.antecedentes}}<br>
+        {% endif %}
+        {% if anamnesis.enfermedad != null %}
+        <strong>Enfermedad actual: </strong>{{anamnesis.enfermedad}}<br>
+        {% endif %}
+        {% if anamnesis.inspeccion != null %}
+        <strong>Inspeccion general:</strong>{{anamnesis.inspeccion}}<br>
+        {% endif %}
+        {% if anamnesis.cabezaCuello != null %}
+        <strong>Cabeza y cuello: </strong>{{anamnesis.cabezaCuello}}<br>
+        {% endif %}
+        {% if anamnesis.neurologica != null %}
+        <strong>Exploración neurológica: </strong>{{anamnesis.neurologica}}<br>
+        {% endif %}
+        {% if anamnesis.aCardiaca != null %}
+        <strong>Auscultación cardíaca: </strong>{{anamnesis.aCardiaca}}<br>
+        {% endif %}
+        {% if anamnesis.aRespiratoria != null %}
+        <strong>Auscultación respiratoria: </strong>{{anamnesis.aRespiratoria}}<br>
+        {% endif %}
+        {% if anamnesis.abdomen != null %}
+        <strong>Exploración del abdomen: </strong>{{anamnesis.abdomen}}<br>
+        {% endif %}
+        {% if anamnesis.extremidades != null %}
+        <strong>Exploración de extremidades: </strong>{{anamnesis.extremidades}}<br>
+        {% endif %}
+        {% if anamnesis.tension != null %}
+        <strong>Tensión: </strong>{{anamnesis.tension}}<br>
+        {% endif %}
+        {% if anamnesis.frecuencia != null %}
+        <strong>Frecuencia: </strong>{{anamnesis.frecuencia}}<br><br>
+        {% endif %}
+
+        {% if revision.evolucion != null %}
+        <strong><u>REVISIÓN</u></strong><br>
+        {{revision.evolucion}}<br><br><br>
+        {% endif %}
+
+        <strong><u>COMPLEMENTARIA</u></strong><br>
+        {% if complementaria.dieta != null %}
+        <strong>Dieta recomendada: </strong>{{complementaria.dieta}}<br>
+        {% endif %}
+        {% if complementaria.medicina != null %}
+        <strong>Medicación:</strong> {{complementaria.medicina}}</strong><br>
+        {% endif %}
+        {% if complementaria.dosis!= null %}
+        <strong>Dosis: </strong>{{complementaria.dosis}}<br><br>
+        {% endif %}
+    </div>
+    <div class="infPie">
+        <strong>Consulta Dr.Bentabol  |  
+        <h12>{{medico.direccion}}</strong></h12>
+    </div>
+    <div class="infFirma">
+        <i>Gonzalo Bentabol Manzanares</i>
+    </div>
+       
+    </div>
+</div>
+
+
+<script>
+    function imprimirInforme() {
+        window.print();
+    }
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;    function hideHeader() {
+        document.getElementById("noImprimir").style.display="none";
+    }
+    day = date.getDate();
+    document.getElementById("current_date").innerHTML = "Fecha: "+ day + "/" + month + "/" + year;
+</script>
+
+<style>
+    @media print {
+        .noImprimir {
+            visibility: hidden;
+        }
+        .hoja-a42{
+            visibility: hidden;
+        }
+    }
+</style>
+
+

@@ -1,30 +1,29 @@
-<!DOCTYPE html>
-<html>
+{% extends "padre2.html" %}
+    {% block central %}
         <form action="nuevoPaciente.php" method="post">
-            <div class="nuevoPaciente"> 
+            <div class="centro"> 
                 <h1>Datos personales del nuevo paciente:</h1>
-                Información del nuevo paciente a añadir
 
-                <label for="id" class = "dni">DNI del paciente</label>
-                <p><input class = "input_form" type="text" placeholder="DNI..." name="dni" required></p>
+                <label for="id" class = "tituloCaja1">DNI del paciente:</label>
+                <p><input class = "caja1" type="text" placeholder="DNI..." name="dni" required></p>
 
-                <p><label class="label_signup" for="nombre"><b>Nombre del paciente</b></label></p>
-                <input class = "input_form" type="text" placeholder="Nombre..." name="nombre" required>
+                <label class="tituloCaja2" for="nombre"><b>Nombre del paciente:</b></label>
+                <p><input class = "caja2" type="text" placeholder="Nombre..." name="nombre" required></p>
 
-                <p><label class="label_signup" for="apellidos"><b>Apellidos del paciente</b></label></p>
-                <input class = "input_form" type="text" placeholder="Apellidos..." name="apellidos" required>
+                <p><label class="tituloCaja3" for="apellidos"><b>Apellidos del paciente:</b></label></p>
+                <input class = "caja3" type="text" placeholder="Apellidos..." name="apellidos" required>
 
-                <p><label class="label_signup" for="compañia"><b>Compañía de Seguros</b></label></p>
-                <input class = "input_form" type="text"  placeholder="Compañía..." name="compañia" required>
+                <p><label class="tituloCaja4" for="compañia"><b>Compañía de seguro:</b></label></p>
+                <input class = "caja4" type="text"  placeholder="Compañía..." name="compañia" required>
 
-                <p><label class="label_signup" for="fecha">Fecha de nacimiento:</label></p>
-                <input class = "input_form" type="date"  placeholder="Fecha..." name="fecha" required>
+                <p><label class="tituloCaja5" for="fecha">Fecha de nacimiento:</label></p>
+                <input class = "caja5" type="date"  placeholder="Fecha..." max ="2020-01-01" name="fecha" required>
 
-                <p><label class="label_signup" for="direccion"><b>Direccion del paciente</b></label></p>
-                <input class = "input_form" type="text" placeholder="Direccion..." name="direccion" required>
+                <p><label class="tituloCaja6" for="direccion"><b>Dirección del paciente:</b></label></p>
+                <input class = "caja6" type="text" placeholder="Direccion..." name="direccion" required>
 
-                <p><label class="label_signup" for="telefono"><b>Teléfono del paciente</b></label></p>
-                <input class = "input_form" type="text" placeholder="Teléfono..." name="telefono" required>
+                <p><label class="tituloCaja7" for="telefono"><b>Teléfono del paciente:</b></label></p>
+                <input class = "caja7" type="text" placeholder="Teléfono..." name="telefono" required>
 
                 <p>
                 {% for e in errores %}
@@ -35,9 +34,9 @@
                 </p>
             
                 <p>
-                    <button type="submit" class="boton signupbtn">Añadir Paciente</button>
+                    <button type="submit" class="botonEnviar">Añadir Paciente</button>
                 </p>
                 
             </div>
       </form>
-</html>
+    {% endblock %}

@@ -23,8 +23,10 @@
             array_push($errores, "El teléfono debe tener una longitud de 9 caracteres");
             $error = true;
           }
-          if(strlen($paciente['dni']) != 9){
-            array_push($errores, "El DNI debe tener una longitud de 9 caracteres");
+          $formato=preg_match('/[0-9]{7,8}[A-Z]/', $paciente['dni']);
+          if ($formato!=1)
+          {
+            array_push($errores, "El DNI tiene un formato incorrecto");
             $error = true;
           }
           if(!$error){
@@ -36,7 +38,7 @@
             }
             else{
                 $_SESSION['dni'] = $_POST['dni'];
-                header("Location: inicio.php");
+                header("Location: personalPaciente.php");
             }
           }
           else{

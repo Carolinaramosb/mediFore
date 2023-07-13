@@ -48,6 +48,19 @@
 
             return $medico;
         }
+
+        //Funcion devuelve cargo
+        function getCargo($nombre){
+            $stmt = $this->mysql->prepare('SELECT cargo FROM usuarios WHERE nombre = ?');
+            $stmt->bind_param('s', $nombre);
+            $stmt->execute();
+            
+            $res = $stmt->get_result();
+            $row = $res->fetch_assoc();
+            $paciente = array('cargo' => $row['cargo']);        
+            
+            return $paciente['cargo'];
+        }
         
         // Funcion mostrar datos personales pacientes
         function getPaciente($dni){
@@ -72,7 +85,7 @@
 
         //Funcion mostrar paciente según numHistoria
         function getNumHistorias(){
-            $stmt = $this->mysql->prepare('SELECT * FROM personalPacientes');
+            $stmt = $this->mysql->prepare('SELECT * FROM personalPacientes ORDER BY apellidos ASC');
             $stmt->execute();
             
             $res = $stmt->get_result();
@@ -172,6 +185,11 @@
                 medicina, dosis) VALUES (?,null, null, null, null, null)");
                 $stmt->bind_param("s", $paciente['dni']);
                 $stmt->execute();
+
+                $stmt = $this->mysql->prepare("INSERT INTO citas (dni, dia, hora, minuto)
+                VALUES (?,null, null, null)");
+                $stmt->bind_param("s", $paciente['dni']);
+                $stmt->execute();
             }
             return $registrado;
         }
@@ -217,36 +235,68 @@
             $stmt = $this->mysql->prepare("UPDATE medicacion SET complementaria= ?, diagnostico= ?, dieta= ?, 
             medicina= ?, dosis= ? WHERE dni =?");
             $stmt->bind_param(
-            "sssssss",$paciente['complementaria'],$paciente['diagnostico'], $paciente['dieta'], 
+            "ssssss",$paciente['complementaria'],$paciente['diagnostico'], $paciente['dieta'], 
             $paciente['medicina'], $paciente['dosis'], $paciente['dni']);
             $stmt->execute();
         }
 
         //Funcion para eliminar paciente
         function eliminarPaciente($dni){
-            $stmt = $this->mysql->prepare('SELECT * FROM personalPaciente WHERE dni = ?');
+            $stmt = $this->mysql->prepare('DELETE FROM revision WHERE dni = ?');
             $stmt->bind_param('s', $dni);
+            $stmt->execute(); 
+
+            $stmt = $this->mysql->prepare('DELETE FROM medicacion WHERE dni = ?');
+            $stmt->bind_param('s', $dni);
+            $stmt->execute(); 
+
+            $stmt = $this->mysql->prepare('DELETE FROM anamnesis WHERE dni = ?');
+            $stmt->bind_param('s', $dni);
+            $stmt->execute(); 
+
+            $stmt = $this->mysql->prepare('DELETE FROM citas WHERE dni = ?');
+            $stmt->bind_param('s', $dni);
+            $stmt->execute(); 
+
+            $stmt = $this->mysql->prepare('DELETE FROM personalPacientes WHERE dni = ?');
+            $stmt->bind_param('s', $dni);
+            $stmt->execute();             
+
+        }
+
+        //Funcion para guardar una cita
+        function addCita($paciente){
+            $stmt = $this->mysql->prepare('SELECT * FROM citas WHERE hora = ? AND dia = ? AND minuto = ?');
+            $stmt->bind_param('sss', $paciente['hora'], $paciente['dia'], $paciente['minuto']);
             $stmt->execute();
-            
             $res = $stmt->get_result();
-
-            if ($res->num_rows > 0){
-                $stmt = $this->mysql->prepare('DELETE FROM revision WHERE dni = ?');
-                $stmt->bind_param('s', $dni);
-                $stmt->execute(); 
-
-                // $stmt = $this->mysql->prepare('DELETE FROM medicacion WHERE dni = ?');
-                // $stmt->bind_param('s', $dni);
-                // $stmt->execute(); 
-
-                // $stmt = $this->mysql->prepare('DELETE FROM anamnesis WHERE dni = ?');
-                // $stmt->bind_param('s', $dni);
-                // $stmt->execute(); 
-
-                // $stmt = $this->mysql->prepare('DELETE FROM personalPaciente WHERE dni = ?');
-                // $stmt->bind_param('s', $dni);
-                // $stmt->execute();             
+            
+            $ocupado = false;
+            if($res->num_rows > 0){
+                $ocupado = true;
+            }
+            else{
+                $stmt = $this->mysql->prepare("UPDATE citas SET dia = ?, hora = ?, minuto = ? WHERE dni=?");
+                $stmt->bind_param("ssss", $paciente['dia'], $paciente['hora'],$paciente['minuto'], $paciente['dni']);
+                $stmt->execute();
             }
 
+            return $ocupado;
+        }
+
+        function getFecha($paciente){
+            $stmt = $this->mysql->prepare('SELECT * FROM citas WHERE dni = ?');
+            $stmt->bind_param('s', $paciente);
+            $stmt->execute();
+
+            $res = $stmt->get_result();
+            $fecha = array('dia' => "", 'hora' => "", 'minuto' => "", 'cita' => false);
+            if ($res->num_rows > 0){
+                $row = $res->fetch_assoc();
+                $fecha = array('dia' => $row['dia'], 'hora' => $row['hora'],
+                'minuto' => $row['minuto']);      
+                $fecha['cita']=true;          
+            }
+            return $fecha;
         }
 }

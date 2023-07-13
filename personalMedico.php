@@ -1,6 +1,5 @@
 <?php 
-
-    include ("cabecera.php");
+    
 
     require_once "/opt/lampp/phpmyadmin/vendor/autoload.php";
     include ("conexiondb.php");
@@ -17,5 +16,5 @@
 
     echo $twig->render('personalMedico.html', ['personalMedico' => $medico]);
             
-include ("piedepagina.php");
+
 ?>

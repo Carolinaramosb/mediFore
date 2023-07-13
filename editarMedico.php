@@ -24,7 +24,7 @@
         }
         if(!$error){
           $sql->editMedico($medico);
-          header("Location: inicio.php");
+          header("Location: personalMedico.php");
         }
         else{
           echo $twig->render('editarMedico.html', ['errores' => $errores]);

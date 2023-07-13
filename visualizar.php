@@ -1,5 +1,4 @@
 <?php 
-   
 
     require_once "/opt/lampp/phpmyadmin/vendor/autoload.php";
     include ("conexiondb.php");
@@ -11,13 +10,9 @@
 
     $sql = new modeloBD;
 
-    if (isset($_GET['dni'])){
-        $_SESSION['dni']=$_GET['dni'];
-    }
+    $paciente_activo = $_SESSION['dni'];
+    $datos_paciente = $sql->getAnamnesis($paciente_activo);
 
-    $paciente = $sql->getPaciente($_SESSION['dni']);
-
-    echo $twig->render('personalPacientes.html', ['personalPaciente' => $paciente]);
-            
+    echo $twig->render('visualizar.html',['paciente' => $datos_paciente]);
 
 ?>

@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+  {% block central %}
+  <form action="inicio.php" method="get" class="botonesInicio">
+
+    <div class ="botonInicio2">
+      <a href="personalPaciente.php">Datos personales del paciente</a>
+    </div>
+
+    {% if cargo == "1" %}
+      <div class ="botonInicio1">
+        <a href="medicoPaciente.php">Datos médicos del paciente</a>
+      </div>
+    
+      <div class ="botonInicio4">
+          <a href="antesInforme.php">Consultar informe</a>
+      </div>
+    {% endif %}
+
+    <div class ="botonInicio3">
+      <a href="calendario.php">Nueva cita</a>
+    </div>
+  </form>     
+  {% endblock %}
+

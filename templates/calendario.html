@@ -1,0 +1,60 @@
+{% extends "padre.html" %}
+    {% block central %}
+    <form action="calendario.php" method="post" onsubmit="return validarFecha()">
+        <div class="calendario"> 
+
+            El horario de consulta es de 16:00 a 21:00 y las citas se asignan cada 15 minutos.<br>
+            {% if fecha.cita == true %}
+                Última consulta registrada:  {{fecha.dia}} a las {{fecha.hora}}:{{fecha.minuto}}
+            {% endif %}
+            {% if fecha.cita == false %}
+                No hay citas para el paciente seleccionado.
+            {% endif %}
+            
+            <p><label class="tituloCaja2" for="dia">Seleccione un día</label></p>
+            <input class="caja2" type="date" name="dia" min="2023-06-01" id="dia">
+
+            <p><label class="tituloCaja3" for="hora">Seleccione una hora</label></p>
+            <input class="caja3" type="number" name="hora" min="16" max="21" id="hora">
+
+            <p><label class="tituloCaja6" for="minuto">Seleccione un minuto</label></p>
+            <input class="caja6" type="number" name="minuto" min="0" max="45" step="15" id="minuto">
+
+            <div class="errores">
+                <p>{{error}}</p>
+            </div>
+            <div id="error_fecha"></div>
+
+            <div class="botonesPP">
+                <div class="botonLado1">
+                        <button type="submit"class="botonEnviar" onclick="return confirmacion()">Guardar fecha</button> 
+                </div>
+            </div>
+        </div>
+    </form>
+
+<script>
+    function validarFecha() {
+        var fechaInput = document.getElementById("dia").value;
+        var fechaSeleccionada = new Date(fechaInput);
+        var diaSemana = fechaSeleccionada.getDay();
+
+        // 0 = Domingo, 6 = Sábado
+        if (diaSemana === 0 || diaSemana === 6) {
+            //alert("No se permiten fechas de fin de semana.");
+            document.getElementById("error_fecha").innerHTML = "No se pueden elegir fin de semanas";
+            return false; // Cancelar el envío del formulario
+        }
+
+        return true; // Permitir el envío del formulario
+    }
+
+    function confirmacion() {
+        var dia = document.getElementById("dia").value;
+        var hora = document.getElementById("hora").value;
+        var minuto = document.getElementById("minuto").value;
+        var mensaje = "Se ha registrado la cita el día "+dia +" a las "+hora +":"+minuto;
+        alert(mensaje);
+    }
+</script>
+{% endblock %}

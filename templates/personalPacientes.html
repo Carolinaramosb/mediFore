@@ -1,24 +1,29 @@
+{% extends "padre.html" %}
+    {% block central %}
+    <form action="personalPaciente.php?nombre={{pacienteSelec}}" method="post">
+        <div class="centro">
+            <h1>Datos personales del paciente</h1>
+            <label for="id" class="tituloCaja1"><span class="titulo-negrita">Nombre:</span> {{personalPaciente.nombre}}</label>
+            <label for="id" class="tituloCaja2"><span class="titulo-negrita">Apellidos:</span> {{personalPaciente.apellidos}}</label>
+            <label for="id" class="tituloCaja3"><span class="titulo-negrita">Compañía de seguros:</span> {{personalPaciente.compañia}}</label>
+            <label for="id" class="tituloCaja4"><span class="titulo-negrita">Fecha de nacimiento:</span> {{personalPaciente.fechaNaci}}</label>
+            <label for="id" class="tituloCaja5"><span class="titulo-negrita">Nº Historia:</span> {{personalPaciente.numHistoria}}</label>
+            <label for="id" class="tituloCaja6"><span class="titulo-negrita">DNI:</span> {{personalPaciente.dni}}</label>
+            <label for="id" class="tituloCaja7"><span class="titulo-negrita">Dirección:</span> {{personalPaciente.direccion}}</label>
+            <label for="id" class="tituloCaja8"><span class="titulo-negrita">Teléfono:</span> {{personalPaciente.telefono}}</label>
+        </div>
+        
 
-<form action="personalPaciente.php?nombre={{pacienteSelec}}" method="post">
-    <div class="datosPersonales"> 
-        <h1>Datos personales del paciente</h1>
-        Información relacionada con los datos personales del médico.
-        <h6> Nombre: {{personalPaciente.nombre}}</h6>
-        <h6> Apellidos: {{personalPaciente.apellidos}}</h6>
-        <h6> Compañía de seguros: {{personalPaciente.compañia}}</h6>
-        <h6> Fecha de nacimiento: {{personalPaciente.fechaNaci}}</h6>
-        <h6> Nº Historia: {{personalPaciente.numHistoria}}</h6>
-        <h6> DNI: {{personalPaciente.dni}}</h6>
-        <h6> Dirección: {{personalPaciente.direccion}}</h6>
-        <h8> Teléfono: {{personalPaciente.telefono}}</h8>
-    </div>
+        <div class="botonesPP">
+            <div class = "botonLado2">
+                <a href = "editarPaciente.php">Editar paciente</a>
+            </div>
 
-    <div class = "botonEditarPaciente">
-        <a href = "editarPaciente.php">Editar paciente</a>
-    </div>
+            <div class = "botonLado1">
+                <a href="eliminarPaciente.php" onclick="return confirm('¿Estás seguro que deseas eliminar el paciente?');">
+                    Eliminar paciente</a>
+            </div>
+        </div>
 
-    <div class = "botonEliminarPaciente">
-        <a href = "eliminarPaciente.php">Eliminar paciente</a>
-    </div>
-
-</form>
+    </form>
+    {% endblock %}

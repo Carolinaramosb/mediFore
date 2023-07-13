@@ -1,24 +1,39 @@
-<form action="editarPaciente.php?paciente={{paciente.dni}}" method="post">
-    <div class="editarPaciente">
-        <h1>Paciente a editar : {{paciente.nombre}} {{paciente.apellidos}}</h1> 
-        <div class="contenedor-datos">
-            <h3><u>Compañia de Seguros:</u></h3>
-            <label for="compañia" class = "label_signup"></label>
-            <input class = "input_form" type="text" name="compañia" value="{{paciente.compañia}}" required>
-        </div>
-        <div class="contenedor-datos">
-            <h3><u>Direccion:</u></h3>
-            <label for="direccion" class = "label_signup"></label>
-            <input class = "input_form" type="text"  value="{{paciente.direccion}}"  name="direccion" required>
-        </div>
-        <div class="contenedor-datos">
-            <h3><u>Teléfono:</u></h3>
-            <label for="telefono" class = "label_signup"></label>
-            <input class = "input_form" type="text"  value="{{paciente.telefono}}"  name="telefono" required>
-        </div>        
-        <button type="submit" class="boton loginbtn"><b>Editar paciente</b></button>
-        </div>
-        <div>
-            <button type="submit" href = "inicio.php"><b>Volver atrás</b></button>
-        </div>
-</form>
+{% extends "padre.html" %}
+    {% block central %}
+    <form action="editarPaciente.php?paciente={{paciente.dni}}" method="post">
+        <div class="editarPaciente">
+
+            <img src="img/volver.png" style="width: 40px; display: block; margin-top: 0%; margin-left: 0%;" id="volver"
+                onclick="window.location.href='personalPaciente.php'">
+
+            <h1>Paciente a editar : {{paciente.nombre}} {{paciente.apellidos}}</h1> 
+
+            <div class="contenedor-datos">
+                <label for="compañia" class = "tituloCaja2">Compañia de seguro:</label>
+                <input class = "caja2" type="text" name="compañia" value="{{paciente.compañia}}" required>
+            </div>
+            <div class="contenedor-datos">
+                <label for="direccion" class = "tituloCaja3">Direccion:</label>
+                <input class = "caja3" type="text"  value="{{paciente.direccion}}"  name="direccion" required>
+            </div>
+            <div class="contenedor-datos">
+                <label for="telefono" class = "tituloCaja6">Teléfono:</label>
+                <input class = "caja6" type="text"  value="{{paciente.telefono}}"  name="telefono" required>
+            </div>     
+            
+            <p>
+                {% for e in errores %}
+                    <p>
+                        {{e}}
+                    </p>
+                {% endfor %}
+            </p>
+
+            <div class="botonesPP">
+                <div class="botonLado1">
+                        <button type="submit">Confirmar cambio</button> 
+                </div>
+            </div>
+
+    </form>
+    {% endblock %}

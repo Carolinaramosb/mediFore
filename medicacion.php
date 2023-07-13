@@ -20,7 +20,7 @@
     $paciente['medicina'] = $_POST["medicina"];
     $paciente['dosis'] = $_POST["dosis"];
     $sql->editMedicacion($paciente);
-    header("Location: inicio.php");
+    header("Location: medicoPaciente.php");
   }
   else{
     echo $twig->render('medicacion.html', ['paciente' => $datos_paciente]);

@@ -1,25 +1,33 @@
-<form action="medicacion.php?paciente={{paciente.dni}}" method="post">
-    <div class="medicacion"> 
+
+{% extends "padre.html" %}
+    {% block central %}
+    <form action="medicacion.php?paciente={{paciente.dni}}" method="post">
+    <div class="centro"> 
+
+        <img src="img/volver.png" style="width: 40px; display: block; margin-top: 0%; margin-left: 0%;" id="volver"
+        onclick="window.location.href='medicoPaciente.php'">
+
         <h1>Información complementaria del paciente:</h1>
 
-        <p><label class="medicacion" for="complementaria"><b>Datos complementarios</b></label></p>
-        <input class = "input_form" type="text" value="{{paciente.complementaria}}" name="complementaria" required>
+        <p><label class="tituloCaja1" for="complementaria"><b>Datos a añadir:</b></label></p>
+        <input class = "caja1" type="text" value="{{paciente.complementaria}}" name="complementaria" >
 
-        <p><label class="medicacion" for="diagnostico"><b>Diagnostico actual</b></label></p>
-        <input class = "input_form" type="text" value="{{paciente.diagnostico}}" name="diagnostico" required>
+        <p><label class="tituloCaja2" for="diagnostico"><b>Diagnostico actual:</b></label></p>
+        <input class = "caja2" type="text" value="{{paciente.diagnostico}}" name="diagnostico" >
 
-        <p><label class="medicacion" for="dieta">Dieta recomendada</label></p>
-        <input class = "input_form" type="text" value="{{paciente.dieta}}" name="dieta" required>
+        <p><label class="tituloCaja3" for="dieta">Dieta recomendada:</label></p>
+        <input class = "caja3" type="text" value="{{paciente.dieta}}" name="dieta" >
 
-        <p><label class="medicacion" for="medicina"><b>Medicación </b></label></p>
-        <input class = "input_form" type="text" value="{{paciente.medicina}}" name="medicina" required>
+        <p><label class="tituloCaja5" for="medicina"><b>Medicación: </b></label></p>
+        <input class = "caja5" type="text" value="{{paciente.medicina}}" name="medicina" >
 
-        <p><label class="medicacion" for="dosis"><b>Dosis</b></label></p>
-        <input class = "input_form" type="text" value="{{paciente.dosis}}" name="dosis" required>
+        <p><label class="tituloCaja6" for="dosis"><b>Dosis:</b></label></p>
+        <input class = "caja6" type="text" value="{{paciente.dosis}}" name="dosis" >
    
         <p>
             <button type="submit" class="boton signupbtn">Guardar datos</button>
         </p>
         
-    </div>
+    </div>     
 </form>
+{% endblock %}

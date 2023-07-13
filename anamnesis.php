@@ -26,7 +26,7 @@
     $paciente['tension'] = $_POST["tension"];
     $paciente['frecuencia'] = $_POST["frecuencia"];
     $sql->editDatosMedicos($paciente);
-    header("Location: inicio.php");
+    header("Location: medicoPaciente.php");
   }
   else{
     echo $twig->render('anamnesis.html', ['paciente' => $datos_paciente]);

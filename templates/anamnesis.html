@@ -1,44 +1,49 @@
+{% extends "padre.html" %}
+    {% block central %}
+    <form action="anamnesis.php?paciente={{paciente.dni}}" method="post">
+        <div class="centro"> 
 
-        <form action="anamnesis.php?paciente={{paciente.dni}}" method="post">
-            <div class="anamnesis"> 
-                <h1>Anamnesis y exploración:</h1>
+            <img src="img/volver.png" style="width: 40px; display: block; margin-top: 0%; margin-left: 0%;" id="volver"
+                onclick="window.location.href='medicoPaciente.php'">
 
-                <p><label class="anamnesis" for="antecedentes"><b>Antecedentes del paciente</b></label></p>
-                <input class = "input_form" type="text" value="{{paciente.antecedentes}}" name="antecedentes" required>
+            <h1>Anamnesis y exploración:</h1>
 
-                <p><label class="anamnesis" for="enfermedad"><b>Enfermedad actual</b></label></p>
-                <input class = "input_form" type="text" value="{{paciente.enfermedad}}" name="enfermedad" required>
+            <p><label class="tituloCaja1" for="antecedentes"><b>Antecedentes:</b></label></p>
+            <input class = "caja1" type="text" value="{{paciente.antecedentes}}" name="antecedentes" >
 
-                <p><label class="anamnesis" for="inspeccion">Inspeccion general</label></p>
-                <input class = "input_form" type="text" name="inspeccion" required>
+            <p><label class="tituloCaja2" for="enfermedad"><b>Enfermedad actual:</b></label></p>
+            <input class = "caja2" type="text" value="{{paciente.enfermedad}}" name="enfermedad" >
 
-                <p><label class="anamnesis" for="cabezaCuello"><b>Cabeza y cuello</b></label></p>
-                <input class = "input_form" type="text" name="cabezaCuello" required>
+            <p><label class="tituloCaja3" for="inspeccion">Inspeccion general:</label></p>
+            <input class = "caja3" type="text" name="inspeccion" >
 
-                <p><label class="anamnesis" for="neurologica"><b>Exploración neurológica</b></label></p>
-                <input class = "input_form" type="text" name="neurologica" required>
+            <p><label class="tituloCaja4" for="cabezaCuello"><b>Cabeza y cuello:</b></label></p>
+            <input class = "caja4" type="text" name="cabezaCuello" >
 
-                <p><label class="anamnesis" for="aCardiaca"><b>Auscultación cardíaca</b></label></p>
-                <input class = "input_form" type="text" name="aCardiaca" required>
+            <p><label class="tituloCaja5" for="neurologica"><b>Explo. neurológica:</b></label></p>
+            <input class = "caja5" type="text" name="neurologica" >
 
-                <p><label class="anamnesis" for="aRespiratoria"><b>Auscultación respiratoria</b></label></p>
-                <input class = "input_form" type="text" name="aRespiratoria" required>
+            <p><label class="tituloCaja6" for="aCardiaca"><b>Auscul. cardíaca:</b></label></p>
+            <input class = "caja6" type="text" name="aCardiaca" >
 
-                <p><label class="anamnesis" for="abdomen"><b>Exploración del abdomen</b></label></p>
-                <input class = "input_form" type="text" name="abdomen" required>
+            <p><label class="tituloCaja7" for="aRespiratoria"><b>Auscul. respiratoria:</b></label></p>
+            <input class = "caja7" type="text" name="aRespiratoria" >
 
-                <p><label class="anamnesis" for="extremidades"><b>Exploración de extremidades</b></label></p>
-                <input class = "input_form" type="text"  name="extremidades" required>
+            <p><label class="tituloCaja8" for="abdomen"><b>Explo.del abdomen:</b></label></p>
+            <input class = "caja8" type="text" name="abdomen" >
 
-                <p><label class="anamnesis" for="tension">Tension artesarial</label></p>
-                <input class = "input_form" type="number" name="tension" required>
+            <p><label class="tituloCaja9" for="extremidades"><b>Explo. extremidades:</b></label></p>
+            <input class = "caja9" type="text"  name="extremidades" >
 
-                <p><label class="anamnesis" for="frecuencia">Frecuencia cardiaca</label></p>
-                <input class = "input_form" type="number" name="frecuencia" required>
-                            
-                <p>
-                    <button type="submit" class="boton signupbtn">Guardar datos</button>
-                </p>
-                
-            </div>
-      </form>
+            <p><label class="tituloCaja10" for="tension">Tension:</label></p>
+            <input class = "caja10" type="number" name="tension" step="any" >
+
+            <p><label class="tituloCaja11" for="frecuencia">Frecuencia:</label></p>
+            <input class = "caja11" type="number" name="frecuencia" >
+                        
+            <p>
+                <button type="submit" class="boton signupbtn">Guardar datos</button>
+            </p>           
+        </div>
+    </form>
+    {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+    {% block central %}
+    <form action="visualizar.php?paciente={{paciente.dni}}" method="post">
+        <div class="centro"> 
+
+            <img src="img/volver.png" style="width: 40px; display: block; margin-top: 0%; margin-left: 0%;" id="volver"
+                onclick="window.location.href='antesInforme.php'">
+
+            <h1>Datos almacenados:</h1>
+
+            <label for="id" class="tituloCaja1"><span class="titulo-negrita">Antecedentes:</span>{{paciente.antecedentes}}</label>
+            <label for="id" class="tituloCaja2"><span class="titulo-negrita">Enfermedad actual:</span>{{paciente.enfermedad}}</label>
+            <label for="id" class="tituloCaja3"><span class="titulo-negrita">Inspección general:</span>{{paciente.inspeccion}}</label>
+            <label for="id" class="tituloCaja4"><span class="titulo-negrita">Cabeza y cuello:</span>{{paciente.cabezaCuello}}</label>
+            <label for="id" class="tituloCaja5"><span class="titulo-negrita">Explo. neurológica:</span>{{paciente.neurologica}}</label>
+            <label for="id" class="tituloCaja6"><span class="titulo-negrita">Auscul. respiratoria:</span>{{paciente.aCardiaca}}</label>
+            <label for="id" class="tituloCaja7"><span class="titulo-negrita">Explo. neurológica:</span>{{paciente.aRespiratoria}}</label>
+            <label for="id" class="tituloCaja8"><span class="titulo-negrita">Explo. del abdomen:</span>{{paciente.abdomen}}</label>
+            <label for="id" class="tituloCaja9"><span class="titulo-negrita">Explo. extremidades:</span>{{paciente.extremidades}}</label>
+            <label for="id" class="tituloCaja10"><span class="titulo-negrita">Tension:</span>{{paciente.tension}}</label>
+            <label for="id" class="tituloCaja11"><span class="titulo-negrita">Frecuencia:</span>{{paciente.frecuencia}}</label>          
+        </div>
+    </form>
+    {% endblock %}

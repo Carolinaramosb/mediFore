@@ -1,6 +1,612 @@
+/*Apartado informe*/
+.infFirma{
+    position: relative;
+    top:1050px;
+    left:75%;
+}
+.infPie{
+    position: absolute;
+    top: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.infMedicos{
+    position: absolute;
+    top: 330px;
+    line-height: 2;
+}
+.infPersonal{
+    position: absolute;
+    top: 200px;
+    line-height: 2;
+}
+.hoja-a4 {
+    width: 210mm; /* Ancho de la hoja A4 */
+    height: 297mm; /* Alto de la hoja A4 */
+    background-color: white; /* Color de fondo de la hoja */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra para simular el papel */
+    margin: 0 auto; /* Centrar la hoja en la página */
+    padding: 20mm; /* Márgenes internos para simular el espacio en blanco */
+    font-family: Arial, sans-serif; /* Fuente de texto */
+}  
+.informe-imprimible {
+    position: relative;
+}  
+.infMedico {
+    position: absolute;
+    top: 0;
+    right: 32px;
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+}  
+.infMedico2{
+    position: absolute;
+    top: 20;
+    right: 0;
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+}
+ 
+.volverInforme a{
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 5%;
+    right: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: blue;
+    border: 2.3px solid blue;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;  
+}
+.volverInforme a:hover {
+    background-color: blue;
+    color: white;
+}
+
+.informe a{
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 10%;
+    right: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: darkgreen;
+    border: 2.3px solid darkgreen;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;  
+}
+.informe a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+/*Apartado datos medicos*/
+.cuadroEvolucion{
+    position: absolute;
+    top: 20%;
+    left: 9%;
+    right: 50%; 
+    width: 80%;
+    height: 55%;
+}
+
+.botonMed1 a {
+    top: 50%;
+    left: 30%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonMed2 a {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonMed3 a {
+    top: 50%;
+    left: 70%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/*Apartado personalPaciente*/
+.titulo-negrita {
+    font-weight: bold;
+}
+h5{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+.botonLado2 a{
+    top: 65%;
+    left: 90%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 11%; 
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonLado1 a, .botonLado1 button{
+    top: 55%;
+    left: 90%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 11%; 
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonesPP a, .botonesPP button {
+    font-family: "Arial Rounded MT", sans-serif;    
+    background-color: transparent;
+    color: darkgreen;
+    border: 2.3px solid darkgreen;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonesPP a:hover, .botonesPP button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+/*Apartado inicio*/
+.botonInicio4 a {
+    top: 50%;
+    left: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonInicio3 a {
+    top: 50%;
+    left: 60%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonInicio2 a {
+    top: 50%;
+    left: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonInicio1 a {
+    top: 50%;
+    left: 20%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ajusta el valor del ancho según el tamaño deseado */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.botonesInicio a {
+    font-family: "Arial Rounded MT", sans-serif;    
+    background-color: transparent;
+    color: black;
+    border: 2.3px solid black;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonesInicio a:hover {
+    background-color: rgb(241, 241, 241);
+    color: grey;
+}
+/*Apartado listaNombres*/
+.nombres{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+}
+.muestraPaciente{
+    column-count: 4; /* Divide los elementos en columnas de 2 */
+    column-width: repeat(auto-fit, 100px);
+    column-gap: 0px; /* Espacio entre las columnas */
+    column-rule: 1px solid transparent; /* Borde transparente entre las columnas */
+    height: 350px;
+    overflow-y: scroll;
+    top: 50%;
+    left: 50%;
+}
+
+
+/*Apartado nuevoPaciente*/
+.centro button{
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 85%;
+    left: auto;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: rgb(1, 114, 1);
+    border: 2.3px solid darkgreen;
+    border-radius: 0px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.centro button:hover,.form button:active,.form button:focus {
+    background-color: darkgreen;
+    color: white;
+}
+h1{
+    width: 600px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    color: darkgreen;
+    font-family: "Arial Rounded MT", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+label{
+    width: 600px;
+    color: dark;
+    font-family: "Arial Rounded MT", sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+}
+.tituloCaja1{
+    position: absolute;
+    top: 30%;
+    text-align: left;
+    left: 13%;
+}
+.caja1{
+    position: absolute;
+    top: 30%;
+    left: 27%; 
+}
+.tituloCaja2{
+    position: absolute;
+    top: 40%;
+    text-align: left;
+    left: 13%;
+}
+.caja2{
+    position: absolute;
+    top: 40%;
+    left: 27%; 
+}
+.tituloCaja3{
+    position: absolute;
+    top: 50%;
+    text-align: left;
+    left: 13%;
+}
+.caja3{
+    position: absolute;
+    top: 50%;
+    left: 28%; 
+}
+.tituloCaja4{
+    position: absolute;
+    top: 60%;
+    text-align: left;
+    left: 13%;
+}
+.caja4{
+    position: absolute;
+    top: 60%;
+    left: 27%; 
+}
+.tituloCaja5{
+    position: absolute;
+    top: 30%;
+    text-align: left;
+    left: 50%;
+}
+.caja5{
+    position: absolute;
+    top: 30%;
+    right: 20%; 
+}
+.tituloCaja6{
+    position: absolute;
+    top: 40%;
+    text-align: left;
+    left: 50%;
+}
+.caja6{
+    position: absolute;
+    top: 40%;
+    right: 20%; 
+}
+.tituloCaja7{
+    position: absolute;
+    top: 50%;
+    text-align: left;
+    left: 50%;
+}
+.caja7{
+    position: absolute;
+    top: 50%;
+    right: 20%; 
+}
+.tituloCaja8{
+    position: absolute;
+    top: 60%;
+    text-align: left;
+    left: 50%;
+}
+.caja8{
+    position: absolute;
+    top: 60%;
+    right: 20%; 
+}
+.tituloCaja9{
+    position: absolute;
+    top: 70%;
+    text-align: left;
+    left: 13%;
+}
+.caja9{
+    position: absolute;
+    top: 70%;
+    left: 28%; 
+}
+.tituloCaja10{
+    position: absolute;
+    top: 70%;
+    text-align: left;
+    left: 50%;
+}
+.caja10{
+    position: absolute;
+    top: 70%;
+    left: 56%; 
+}
+.tituloCaja11{
+    position: absolute;
+    top: 70%;
+    text-align: left;
+    left: 75%;
+}
+.caja11{
+    position: absolute;
+    top: 70%;
+    left: 83%; 
+}
+/*Apartado padre*/
+.form4 {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #FFFFFF;
+    width: 80%;
+    height: 40%;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+h4{
+    width: 600px;
+    position: absolute;
+    top: 90%;
+    left: 31%;
+    color: darkgreen;
+    font-family: "Arial Rounded MT", sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+}
+.form3 {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #FFFFFF;
+    width: 90%;
+    height: 90%;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.botonInicio a {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: blue;
+    border: 2.3px solid blue;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonInicio a:hover {
+    background-color: blue;
+    color: white;
+}
+.botonLogoutP a {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 10%;
+    right: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: darkgreen;
+    border: 2.3px solid darkgreen;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonLogoutP a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+.botonDatosM a {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 25%;
+    right: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: grey;
+    border: 2.3px solid grey;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonDatosM a:hover {
+    background-color: grey;
+    color: white;
+}
+/*Apartado de loginPaciente*/
+.form2 {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #FFFFFF;
+    width: 70%;
+    height: 70%;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form2 input{
+    font-family: "Arial Rounded MT", sans-serif; 
+    outline: 0;
+    background: #f2f2f2;
+    width: 15%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.busqueda{
+    width: 200px;
+    position: absolute;
+    top: 75%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial Rounded MT", sans-serif;
+}
+h2{
+    width: 400px;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial Rounded MT", sans-serif; 
+    font-weight: lighter;
+}
+h3 {
+    width: 600px;
+    position: absolute;
+    top: 65%;
+    left: 68.5%;
+    color: darkgreen;
+    transform: translate(-50%, -50%);
+    font-family: "Arial Rounded MT", sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+}
+.botonLoginP1 a {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    margin: 5px;
+    background-color: transparent;
+    color: darkgreen;
+    border: 2.3px solid darkgreen;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonLoginP1 a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.botonLoginP a {
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    margin: 5px;
+    background-color: transparent;
+    color: darkgreen;
+    border: 2.3px solid darkgreen;
+    border-radius: 0px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.botonLoginP a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
 /*Apartado de login*/
 .login{
-    width: 360px;
+    width: 600px;
     padding: 8% 0 0;
     margin: auto;
 }
@@ -9,7 +615,7 @@
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 360px;
+    max-width: 600px;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
@@ -27,99 +633,50 @@
     font-size: 14px;
 }
 .form button{
-    font-family: "Arial Rounded MT", sans-serif; 
-    outline: 0;
-    background: darkgreen;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
+    font-family: "Arial Rounded MT", sans-serif;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    margin: 5px;
+    background-color: transparent;
+    color: rgb(1, 114, 1);
+    border: 2.3px solid darkgreen;
+    border-radius: 0px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
+    background-color: darkgreen;
+    color: white;
 }
 
-/*Apartado de log out*/
-.boton-logout a{
+/*Apartado de logout*/
+.boton-logout a {
+    font-family: "Arial Rounded MT", sans-serif ;
     position: absolute;
-    font-family: "Arial Rounded MT", sans-serif; 
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     padding: 10px;
+    margin: 5px;
     background-color: transparent;
-    color: rgb(25, 109, 25);
-    border: 3px solid darkgreen;
-    border-radius: 8px;
-    text-decoration:none;
-    font-weight: bold;
+    color: red;
+    border: 2.3px solid red;
+    border-radius: 0px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.boton-logout a:hover {
+    background-color: red;
+    color: white;
 }
 
 /*Titulos cabecera*/
 h1{
     width: 600px;
-    margin-left: 32%;
-    margin-right: 40%;
-    font-family: "Arial Rounded MT", sans-serif; 
-}
-h2{
-    width: 400px;
-    margin-left: 40%;
-    margin-right: 35%;
-    font-family: "Arial Rounded MT", sans-serif; 
-}
-
-/*Titulos inicio*/
-h3{
-    width: 600px;
-    margin-left: 40%;
-    margin-right: 50%;
-    font-family: "Arial Rounded MT", sans-serif; 
-  }
-h4{
-    width: 400px;
-    margin-left: 45%;
-    margin-right: 35%;
-    font-family: "Arial Rounded MT", sans-serif; 
-  }
-
-/*Barra de navegación*/
-.header{
-    font-family: "Arial Rounded MT", sans-serif; 
-    width: 100%;
-    position: fixed; /*que siempre lo muestre*/
-    z-index: 100;
-}
-nav{
-    float: center;
-}
-nav ul{
-    list-style: none;
-}
-nav ul li{
-    float: left;
-    background: beige; 
-    font-size: 20px;
-}
-nav ul li a{
-    display: block;
-    padding: 20px;
-    text-decoration:none;
-    color: black;
-    font-family: "Arial Rounded MT", sans-serif; 
-}
-nav ul li:hover{
-    background:  #778c43;
+    margin: 0 auto;
+    font-family: "Arial Rounded MT", sans-serif;
 }
